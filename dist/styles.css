@@ -47,7 +47,7 @@ p {
     margin: 0;
     padding: 2rem 2rem 2rem 4rem;
     position: relative;
-    transition: color linear 500ms;
+    transition: color cubic-bezier(0.22, 1, 0.36, 1) 500ms;
 }
 
 .accordion__item__title i.fa-plus {
@@ -56,14 +56,14 @@ p {
     position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
-    transition: transform linear 500ms;
+    transition: transform cubic-bezier(0.22, 1, 0.36, 1) 500ms;
 }
 
 .accordion__item__content {
     max-height: 0;
     opacity: 0;
     padding: 0 1.5rem;
-    transition: all linear 500ms;
+    transition: all cubic-bezier(0.22, 1, 0.36, 1) 500ms;
 }
 
 .accordion__item__content p:last-child {
