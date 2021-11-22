@@ -12,14 +12,80 @@ body {
     font-size: 1.8rem;
     font-weight: 300;
     margin: 0;
+    position: relative;
 }
 
 p {
     margin: 0 0 1.5rem;
 }
 
+.switch__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4rem 1.5rem;
+}
+
+.switch__wrapper p {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+    width: calc(50% - 4.5rem);
+}
+
+.switch__wrapper p:first-child {
+    text-align: right;
+}
+
+.switch {
+    display: inline-block;
+    height: 3.5rem;
+    margin: 0 1.5rem;
+    position: relative;
+    width: 6rem;
+}
+
+.switch input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+}
+
+.switch__toggle {
+    background-color: #ccc;
+    border-radius: 3.5rem;
+    cursor: pointer;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 500ms;
+}
+
+.switch__toggle:before {
+    background-color: white;
+    border-radius: 50%;
+    content: "";
+    height: 2.5rem;
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
+    transition: 500ms;
+    width: 2.5rem;
+}
+
+.switch input:checked + .switch__toggle {
+    background-color: lightblue;
+}
+  
+.switch input:checked + .switch__toggle:before {
+    transform: translateX(2.5rem);
+}
+
 .accordion {
-    margin: 8rem auto;
+    margin: 0 auto 8rem;
     max-width: calc(100% - 3rem);
     width: 960px;
 }
@@ -82,6 +148,9 @@ p {
 }
 
 @media (min-width: 768px) {
+    .switch__wrapper p {
+        font-size: 1.6rem;
+    }
     .accordion__item__title {
         padding-right: 4rem;
     }
